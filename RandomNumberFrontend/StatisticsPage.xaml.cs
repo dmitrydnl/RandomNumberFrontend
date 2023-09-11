@@ -49,13 +49,23 @@ public partial class StatisticsPage : ContentPage
 
         GlobalStatistics = new List<string> { };
 
-        Thread.Sleep(1000);
+        Thread.Sleep(500);
 
         BindingContext = this;
     }
 
     private async void OnPlayClicked(object sender, EventArgs e)
     {
-        await Navigation.PushModalAsync(new PlayPage());
+        var response = await Server.StartGame(User.Nickname);
+
+        var responseSuccess = response.Item1;
+        var responseString = response.Item2;
+
+        StartGameResult.Text = $"[{responseSuccess}] {responseString}";
+
+        if (responseSuccess)
+        {
+            await Navigation.PushModalAsync(new PlayPage());
+        }
     }
 }

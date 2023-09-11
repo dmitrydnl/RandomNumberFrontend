@@ -22,6 +22,12 @@
                 HorizontalOptions="Center" />
 
             <Label
+                x:Name="StartGameResult"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Label
                 Text="My games"
                 SemanticProperties.HeadingLevel="Level2"
                 FontSize="18"
