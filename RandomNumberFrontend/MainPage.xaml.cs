@@ -21,6 +21,7 @@ public partial class MainPage : ContentPage
 
         if (responseSuccess)
         {
+            User.Nickname = nickname;
             await Navigation.PushModalAsync(new StatisticsPage());
         }
     }
