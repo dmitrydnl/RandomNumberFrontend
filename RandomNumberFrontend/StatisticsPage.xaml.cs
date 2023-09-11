@@ -11,7 +11,7 @@ public partial class StatisticsPage : ContentPage
 
 		Welcome.Text = $"Welcome {User.Nickname}";
 
-        var task = Task.Run(async () =>
+        Task.Run(async () =>
         {
             var response = await Server.UserStatistics(User.Nickname);
 
@@ -30,7 +30,7 @@ public partial class StatisticsPage : ContentPage
 
         MyGames = new List<int> { };
 
-        var task2 = Task.Run(async () =>
+        Task.Run(async () =>
         {
             var response = await Server.GlobalStatistics();
 
