@@ -17,5 +17,11 @@ public partial class PlayPage : ContentPage
         var responseString = response.Item2;
 
         PlayResult.Text = $"[{responseSuccess}] {responseString}";
+
+        if (responseSuccess)
+        {
+            Thread.Sleep(500);
+            await Navigation.PushModalAsync(new StatisticsPage());
+        }
     }
 }
