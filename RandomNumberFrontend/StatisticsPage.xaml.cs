@@ -3,6 +3,7 @@
 public partial class StatisticsPage : ContentPage
 {
     public List<int> MyGames { get; set; }
+    public List<string> GlobalStatistics { get; set; }
 
     public StatisticsPage()
 	{
