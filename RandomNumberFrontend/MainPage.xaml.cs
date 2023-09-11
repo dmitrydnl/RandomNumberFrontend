@@ -18,6 +18,11 @@ public partial class MainPage : ContentPage
         var responseString = response.Item2;
 
         AuthRegResult.Text = $"[{responseSuccess}] {responseString}";
+
+        if (responseSuccess)
+        {
+            await Navigation.PushModalAsync(new StatisticsPage());
+        }
     }
 
     private async void OnRegistrationClicked(object sender, EventArgs e)
