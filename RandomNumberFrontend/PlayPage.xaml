@@ -15,6 +15,24 @@
                 FontSize="18"
                 HorizontalOptions="Center" />
 
+            <Entry
+                x:Name="MyNumberEntry"
+                MaxLength="20"
+                Style="{StaticResource CommonEntryStyle}"
+                Placeholder="Your number?" />
+
+            <Button
+                x:Name="PlayBtn"
+                Text="Play!"
+                Clicked="OnPlayClicked"
+                HorizontalOptions="Center" />
+
+            <Label
+                x:Name="PlayResult"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
         </VerticalStackLayout>
     </ScrollView>
 
