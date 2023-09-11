@@ -9,6 +9,15 @@ namespace RandomNumberFrontend
         private static readonly HttpClient client = new HttpClient();
         private static readonly string prefix = "http://localhost:7071/api";
 
+        public static async Task<(bool, Dictionary<string, int>)> GlobalStatistics()
+        {
+            var response = await client.GetAsync($"{prefix}/GlobalStatistics");
+            var responseString = await response.Content.ReadAsStringAsync();
+            var responseJson = JsonDocument.Parse(responseString);
+            var responseDictionary = JsonSerializer.Deserialize<Dictionary<string, int>>(responseJson);
+            return (response.IsSuccessStatusCode, responseDictionary);
+        }
+
         public static async Task<(bool, List<int>)> UserStatistics(string nickname)
         {
             var response = await client.GetAsync($"{prefix}/UserStatistics?nickname={nickname}");
