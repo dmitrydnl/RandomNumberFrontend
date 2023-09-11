@@ -52,8 +52,8 @@ public partial class StatisticsPage : ContentPage
         BindingContext = this;
     }
 
-    private void OnPlayClicked(object sender, EventArgs e)
+    private async void OnPlayClicked(object sender, EventArgs e)
     {
-		Console.WriteLine("Play");
+        await Navigation.PushModalAsync(new PlayPage());
     }
 }
