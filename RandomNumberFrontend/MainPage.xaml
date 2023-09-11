@@ -17,20 +17,21 @@
                 HorizontalOptions="Center" />
 
             <Entry
+                x:Name="NicknameEntry"
                 MaxLength="20"
                 Style="{StaticResource CommonEntryStyle}"
-                Placeholder="nickname" />
+                Placeholder="Nickname" />
 
             <Entry
+                x:Name="PasswordEntry"
                 MaxLength="20"
                 Style="{StaticResource CommonEntryStyle}"
-                Placeholder="password" />
+                Placeholder="Password" />
 
             <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
+                x:Name="AuthorizationBtn"
+                Text="Authorization"
+                Clicked="OnAuthorizationClicked"
                 HorizontalOptions="Center" />
 
         </VerticalStackLayout>
