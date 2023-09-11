@@ -7,4 +7,9 @@ public partial class StatisticsPage : ContentPage
 		InitializeComponent();
 		Welcome.Text = $"Welcome {User.Nickname}";
 	}
+
+    private void OnPlayClicked(object sender, EventArgs e)
+    {
+		Console.WriteLine("Play");
+    }
 }

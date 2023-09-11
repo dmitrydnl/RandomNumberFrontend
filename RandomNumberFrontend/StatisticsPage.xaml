@@ -15,6 +15,24 @@
                 FontSize="18"
                 HorizontalOptions="Center" />
 
+            <Button
+                x:Name="PlayBtn"
+                Text="Play"
+                Clicked="OnPlayClicked"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="My games"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Global statistics"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
         </VerticalStackLayout>
     </ScrollView>
 
