@@ -28,6 +28,16 @@
                 FontSize="18"
                 HorizontalOptions="Center" />
 
+            <Entry
+                MaxLength="20"
+                Style="{StaticResource CommonEntryStyle}"
+                Placeholder="nickname" />
+
+            <Entry
+                MaxLength="20"
+                Style="{StaticResource CommonEntryStyle}"
+                Placeholder="password" />
+
             <Button
                 x:Name="CounterBtn"
                 Text="Click me"
@@ -39,4 +49,3 @@
     </ScrollView>
 
 </ContentPage>
-
