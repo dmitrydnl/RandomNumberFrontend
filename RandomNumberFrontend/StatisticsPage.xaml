@@ -36,6 +36,9 @@
                 FontSize="18"
                 HorizontalOptions="Center" />
 
+            <ListView
+                ItemsSource="{Binding GlobalStatistics}" />
+
         </VerticalStackLayout>
     </ScrollView>
 
