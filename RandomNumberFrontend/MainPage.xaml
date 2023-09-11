@@ -12,7 +12,6 @@
             <Label
                 Text="Authorization / Registration"
                 SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
                 FontSize="18"
                 HorizontalOptions="Center" />
 
@@ -33,19 +32,26 @@
                 Padding="30,0"
                 HorizontalOptions="Center">
 
-            <Button
-                x:Name="AuthorizationBtn"
-                Text="Authorization"
-                Clicked="OnAuthorizationClicked"
-                HorizontalOptions="Center" />
+                <Button
+                    x:Name="AuthorizationBtn"
+                    Text="Authorization"
+                    Clicked="OnAuthorizationClicked"
+                    HorizontalOptions="Center" />
 
-            <Button
-                x:Name="RegistrationBtn"
-                Text="Registration"
-                Clicked="OnRegistrationClicked"
-                HorizontalOptions="Center" />
+                <Button
+                    x:Name="RegistrationBtn"
+                    Text="Registration"
+                    Clicked="OnRegistrationClicked"
+                    HorizontalOptions="Center" />
 
             </HorizontalStackLayout>
+
+            <Label
+                x:Name="AuthRegResult"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
         </VerticalStackLayout>
     </ScrollView>
 

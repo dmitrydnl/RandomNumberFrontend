@@ -2,7 +2,7 @@
 
 public partial class MainPage : ContentPage
 {
-	public MainPage()
+    public MainPage()
 	{
 		InitializeComponent();
 	}
@@ -11,13 +11,20 @@ public partial class MainPage : ContentPage
 	{
 		var nickname = NicknameEntry.Text;
         var password = PasswordEntry.Text;
+
         Console.WriteLine($"Authorization {nickname} {password}");
 	}
 
-    private void OnRegistrationClicked(object sender, EventArgs e)
+    private async void OnRegistrationClicked(object sender, EventArgs e)
     {
         var nickname = NicknameEntry.Text;
         var password = PasswordEntry.Text;
-        Console.WriteLine($"Registration {nickname} {password}");
+
+        var response = await Server.Registration(nickname, password);
+
+        var responseSuccess = response.Item1;
+        var responseString = response.Item2;
+
+        AuthRegResult.Text = $"[{responseSuccess}] {responseString}";
     }
 }
