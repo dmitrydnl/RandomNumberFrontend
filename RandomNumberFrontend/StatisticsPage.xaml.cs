@@ -49,6 +49,8 @@ public partial class StatisticsPage : ContentPage
 
         GlobalStatistics = new List<string> { };
 
+        Thread.Sleep(1000);
+
         BindingContext = this;
     }
 
