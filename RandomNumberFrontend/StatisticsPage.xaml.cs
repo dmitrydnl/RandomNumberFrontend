@@ -8,11 +8,12 @@ public partial class StatisticsPage : ContentPage
     public StatisticsPage()
 	{
 		InitializeComponent();
-        var nickname = User.Nickname;
-		Welcome.Text = $"Welcome {nickname}";
+
+		Welcome.Text = $"Welcome {User.Nickname}";
+
         var task = Task.Run(async () =>
         {
-            var response = await Server.UserStatistics(nickname);
+            var response = await Server.UserStatistics(User.Nickname);
 
             var responseSuccess = response.Item1;
             var responseList = response.Item2;
@@ -26,7 +27,28 @@ public partial class StatisticsPage : ContentPage
             }
 
         });
+
         MyGames = new List<int> { };
+
+        var task2 = Task.Run(async () =>
+        {
+            var response = await Server.GlobalStatistics();
+
+            var responseSuccess = response.Item1;
+            var responseDictionary = response.Item2;
+
+            if (responseSuccess)
+            {
+                foreach (var (nickname, countOfGames) in responseDictionary)
+                {
+                    GlobalStatistics.Add($"{nickname} : {countOfGames}");
+                }
+            }
+
+        });
+
+        GlobalStatistics = new List<string> { };
+
         BindingContext = this;
     }
 
