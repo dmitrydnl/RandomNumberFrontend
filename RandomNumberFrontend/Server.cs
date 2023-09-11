@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http;
+using System.Text.Json;
 
 namespace RandomNumberFrontend
 {
@@ -7,6 +8,15 @@ namespace RandomNumberFrontend
 	{
         private static readonly HttpClient client = new HttpClient();
         private static readonly string prefix = "http://localhost:7071/api";
+
+        public static async Task<(bool, List<int>)> UserStatistics(string nickname)
+        {
+            var response = await client.GetAsync($"{prefix}/UserStatistics?nickname={nickname}");
+            var responseString = await response.Content.ReadAsStringAsync();
+            var responseJson = JsonDocument.Parse(responseString);
+            var responseList = JsonSerializer.Deserialize<List<int>>(responseJson);
+            return (response.IsSuccessStatusCode, responseList);
+        }
 
         public static async Task<(bool, string)> Authorization(string nickname, string password)
         {

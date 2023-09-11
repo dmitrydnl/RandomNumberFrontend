@@ -7,8 +7,25 @@ public partial class StatisticsPage : ContentPage
     public StatisticsPage()
 	{
 		InitializeComponent();
-		Welcome.Text = $"Welcome {User.Nickname}";
-        MyGames = new List<int> { 123, 23, 1, 90 };
+        var nickname = User.Nickname;
+		Welcome.Text = $"Welcome {nickname}";
+        var task = Task.Run(async () =>
+        {
+            var response = await Server.UserStatistics(nickname);
+
+            var responseSuccess = response.Item1;
+            var responseList = response.Item2;
+
+            if (responseSuccess)
+            {
+                foreach (var game in responseList)
+                {
+                    MyGames.Add(game);
+                }
+            }
+
+        });
+        MyGames = new List<int> { };
         BindingContext = this;
     }
 
