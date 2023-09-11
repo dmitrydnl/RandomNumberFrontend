@@ -16,7 +16,7 @@ namespace RandomNumberFrontend
             return (response.IsSuccessStatusCode, responseString);
         }
 
-        public static async Task<(bool, string)> Play(string nickname, int myNumber)
+        public static async Task<(bool, string)> Play(string nickname, string myNumber)
         {
             var response = await client.PostAsync($"{prefix}/Play?nickname={nickname}&myNumber={myNumber}", null);
             var responseString = await response.Content.ReadAsStringAsync();
