@@ -28,12 +28,24 @@
                 Style="{StaticResource CommonEntryStyle}"
                 Placeholder="Password" />
 
+            <HorizontalStackLayout
+                Spacing="25"
+                Padding="30,0"
+                HorizontalOptions="Center">
+
             <Button
                 x:Name="AuthorizationBtn"
                 Text="Authorization"
                 Clicked="OnAuthorizationClicked"
                 HorizontalOptions="Center" />
 
+            <Button
+                x:Name="RegistrationBtn"
+                Text="Registration"
+                Clicked="OnRegistrationClicked"
+                HorizontalOptions="Center" />
+
+            </HorizontalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 

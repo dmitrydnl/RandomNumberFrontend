@@ -13,4 +13,11 @@ public partial class MainPage : ContentPage
         var password = PasswordEntry.Text;
         Console.WriteLine($"Authorization {nickname} {password}");
 	}
+
+    private void OnRegistrationClicked(object sender, EventArgs e)
+    {
+        var nickname = NicknameEntry.Text;
+        var password = PasswordEntry.Text;
+        Console.WriteLine($"Registration {nickname} {password}");
+    }
 }
